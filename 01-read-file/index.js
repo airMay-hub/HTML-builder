@@ -6,5 +6,10 @@ const stream = new fs.ReadStream(filePath, {encoding: 'utf-8'});
 
 stream.on('readable', () => {
   let data = stream.read();
-  console.log(data);
+
+  if(data === null) {
+    return;
+  } else {
+    console.log(data);
+  }
 });
